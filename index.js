@@ -4,6 +4,17 @@ function crack() {
   //         one by one then return the cracking and we need to compare then stop when it matches
 
   var alpha = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOIPASDFGHJKLZXCVBNM";
-
-  //aa .... ba , bb ....
+  var crack = "";
+  var char;
+  while (crack != pass) {
+    for (var i = 0; i < alpha.length; i++) {
+      char = alpha.charAt(i);
+      if (char === pass.charAt(crack.length)) {
+        crack = crack + char;
+        console.log(crack);
+        break;
+      }
+    }
+  }
+  document.getElementById("crackPass").innerHTML = crack;
 }
